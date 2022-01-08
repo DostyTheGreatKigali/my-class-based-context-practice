@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { MyConsumner } from '../context';
 
-export default class Details extends Component {
+export default class TestContext extends Component {
 
     render() {
         return (
