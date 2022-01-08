@@ -5,8 +5,28 @@ const MyContext = React.createContext();
 class MyProvider extends Component {
 
     state = {
-        name: 'Musah'
+        name: 'Musah',
+        count: 0
     }
+
+    increment = () => {
+        console.log("In increment")
+        this.setState(() => {
+            return {
+                count: this.state.count + 1
+            }
+        })
+    }
+
+    decrement = () => {
+        console.log("In decrement")
+        this.setState(() => {
+            return {
+                count: this.state.count - 1
+            }
+        })
+    }
+
 
     // componentDidMount() {
 
@@ -17,7 +37,9 @@ class MyProvider extends Component {
          <MyContext.Provider
          value={
              {
-                 ...this.state
+                 ...this.state,
+                 increaseCount: this.increment,
+                 decreaseCount: this.decrement
              }
          }
          >
